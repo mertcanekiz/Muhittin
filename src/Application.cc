@@ -9,6 +9,8 @@ int Application::execute()
 
     running = true;
     SDL_Event event;
+    currentState = GameState::getStateByID(GameState::SPLASH);
+    currentState->init();
 
     while(running)
     {
@@ -42,14 +44,14 @@ void Application::input(SDL_Event event)
 
 void Application::update(float delta)
 {
-
+    currentState->update(delta);
 }
 
 void Application::render()
 {
     SDL_SetRenderDrawColor(renderer, 0x00, 0x00, 0x00, 0xff);
     SDL_RenderClear(renderer);
-
+    currentState->render(renderer);
     SDL_RenderPresent(renderer);
 }
 
@@ -85,6 +87,11 @@ bool Application::initialize()
 	printf("Could not create renderer: %s\n", SDL_GetError());
 	SDL_DestroyWindow(window);
 	SDL_Quit();
+	return false;
+    }
+
+    if(Graphics::initialize() == false)
+    {
 	return false;
     }
 
