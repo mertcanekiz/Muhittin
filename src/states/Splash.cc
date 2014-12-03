@@ -9,19 +9,18 @@ Splash::Splash(int id) : GameState(id)
 void Splash::init()
 {
     timer = SDL_GetTicks();
-
-
 }
 
 void Splash::input(SDL_Event event)
 {
-
+    if(event.type == SDL_KEYDOWN)
+	Application::getInstance().changeState(GameState::MENU);
 }
 
 void Splash::update(float delta)
 {
     if(SDL_GetTicks() - timer >= SPLASH_TIME)
-	Application::getInstance().stop();
+	Application::getInstance().changeState(GameState::MENU);
 }
 
 void Splash::render(SDL_Renderer* renderer)

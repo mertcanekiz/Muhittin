@@ -40,6 +40,8 @@ void Application::input(SDL_Event event)
 	    stop();
 	}
     }
+
+    currentState->input(event);
 }
 
 void Application::update(float delta)
@@ -53,6 +55,12 @@ void Application::render()
     SDL_RenderClear(renderer);
     currentState->render(renderer);
     SDL_RenderPresent(renderer);
+}
+
+void Application::changeState(int id)
+{
+    currentState = GameState::getStateByID(id);
+    currentState->init();
 }
 
 void Application::stop()

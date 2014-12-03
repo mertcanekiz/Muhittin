@@ -15,6 +15,8 @@ public:
     static const int GAME   = 0x02;
 
     static GameState* splash;
+    static GameState* menu;
+    static GameState* game;
 
     static GameState* getStateByID(int);
     static void cleanUp();

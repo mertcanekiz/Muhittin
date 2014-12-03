@@ -16,6 +16,7 @@ public:
     }
 
     int execute();
+    void changeState(int);
     void stop();
 
     static const int SCREEN_WIDTH  = 640;
