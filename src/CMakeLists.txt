@@ -1,5 +1,5 @@
 set(CMAKE_CXX_FLAGS "-Wall -Wno-write-strings -std=c++11")
-file(GLOB SRCS *.cc *.h states/*.cc states/*.h)
+file(GLOB SRCS *.cc *.h game/*.cc game/*.h game/states/*.cc game/states/*.h)
 add_executable(${PROJECT_NAME} ${SRCS})
 set(CMAKE_DIR "../cmake")
 include(${CMAKE_DIR}/FindSDL2.cmake)

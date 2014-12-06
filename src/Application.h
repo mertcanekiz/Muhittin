@@ -2,7 +2,7 @@
 #define APPLICATION_H
 
 #include "Graphics.h"
-#include "states/GameState.h"
+#include "game/states/GameState.h"
 #include <SDL2/SDL.h>
 
 class Application

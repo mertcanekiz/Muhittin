@@ -1,7 +1,7 @@
 #ifndef GAMESTATE_H
 #define GAMESTATE_H
 
-#include "../Graphics.h"
+#include "../../Graphics.h"
 
 class GameState
 {

@@ -1,5 +1,5 @@
 #include "Splash.h"
-#include "../Application.h"
+#include "../../Application.h"
 
 Splash::Splash(int id) : GameState(id)
 {

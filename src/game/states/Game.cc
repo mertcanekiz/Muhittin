@@ -1,7 +1,7 @@
 #include "Game.h"
-#include "../Application.h"
+#include "../../Application.h"
 
-Game::Game(int id) : GameState(id)
+Game::Game(int id) : GameState(id), player(Vector2f(100, 101))
 {
 
 }
@@ -13,16 +13,15 @@ void Game::init()
 
 void Game::input(SDL_Event event)
 {
-    if(event.type == SDL_KEYDOWN)
-	Application::getInstance().stop();
+
 }
 
 void Game::update(float delta)
 {
-
+    player.update(delta);
 }
 
 void Game::render(SDL_Renderer* renderer)
 {
-
+    player.render(renderer);
 }
