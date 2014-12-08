@@ -78,8 +78,9 @@ bool Application::initialize()
 	return false;
     }
 
-    window = SDL_CreateWindow("Muhittin v0.1", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED,
-			      SCREEN_WIDTH, SCREEN_HEIGHT, 0);
+    window = SDL_CreateWindow("Muhittin v0.1", SDL_WINDOWPOS_CENTERED,
+			      SDL_WINDOWPOS_CENTERED, SCREEN_WIDTH,
+			      SCREEN_HEIGHT, 0);
 
     if(window == nullptr)
     {
@@ -88,7 +89,8 @@ bool Application::initialize()
 	return false;
     }
 
-    renderer = SDL_CreateRenderer(window, -1, SDL_RENDERER_ACCELERATED | SDL_RENDERER_PRESENTVSYNC);
+    renderer = SDL_CreateRenderer(window, -1, SDL_RENDERER_ACCELERATED
+				  | SDL_RENDERER_PRESENTVSYNC);
 
     if(renderer == nullptr)
     {

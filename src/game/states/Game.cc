@@ -13,7 +13,7 @@ void Game::init()
 
 void Game::input(SDL_Event event)
 {
-
+    player.input(event);
 }
 
 void Game::update(float delta)

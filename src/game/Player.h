@@ -15,6 +15,8 @@ public:
 
 private:
     const float gravityAcceleration = 0.5f;
+    const float horizontalVelocity = 4.0f;
+    bool moveLeft, moveRight, jump, falling;
 
 };
 
