@@ -19,6 +19,7 @@ public:
     virtual void render(SDL_Renderer*) = 0;
 
     inline Vector2f getPosition() const { return position; }
+    inline void setPosition(float x, float y) { position.setX(x); position.setY(y); }
 
 protected:
     Vector2f position;

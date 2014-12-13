@@ -36,20 +36,41 @@ void Player::update(float delta)
 
     if(moveLeft)
     {
-	velocity.setX(-horizontalVelocity);
+	velocity.add(-horizontalAcceleration, 0);
     }
     else if(moveRight)
     {
-	velocity.setX(horizontalVelocity);
+	velocity.add(horizontalAcceleration, 0);
     }
     else
+    {
+	if(velocity.getX() > 0)
+	{
+	    velocity.add(-horizontalAcceleration, 0);
+	}
+	else if(velocity.getX() < 0)
+	{
+	    velocity.add(horizontalAcceleration, 0);
+	}
+    }
+
+    if(std::abs(velocity.getX()) < 0.1f)
     {
 	velocity.setX(0);
     }
 
+    if(velocity.getX() >= horizontalMaxVelocity)
+    {
+	velocity.setX(horizontalMaxVelocity);
+    }
+    else if(velocity.getX() <= -horizontalMaxVelocity)
+    {
+	velocity.setX(-horizontalMaxVelocity);
+    }
+
     if(jump && !falling)
     {
-	velocity.setY(-6);
+	velocity.setY(-jumpVelocity);
     }
 
     position.add(velocity);
